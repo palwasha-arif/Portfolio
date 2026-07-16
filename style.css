@@ -62,9 +62,12 @@ a:hover {
   border: 3px solid #fff;
   margin-left: 1rem;
 }
-
-
 /* Navigation Bar */
+.navbar {
+  position: relative;
+}
+
+
 .navbar ul {
   display: flex;
   justify-content: center;
@@ -72,7 +75,6 @@ a:hover {
   list-style: none;
   background: #253e57;
   padding: 1rem;
-  flex-wrap: wrap; /* ensures wrapping on small screens */
 }
 
 
@@ -88,32 +90,65 @@ a:hover {
   padding: 0.5rem 1rem;
   border-radius: 5px;
 }
-/* Mobile Navigation Fix */
+
+
+/* Hamburger button */
+.menu-toggle {
+  display: none; /* hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+
+/* 📱 Mobile Navigation */
 @media (max-width: 768px) {
   .navbar ul {
-    flex-direction: column;       /* stack vertically */
-    align-items: stretch;         /* full width buttons */
-    gap: 0.5rem;                  /* smaller spacing */
+    flex-direction: column;
+    align-items: stretch;
+    display: none; /* hidden until toggled */
   }
+
+
+  .navbar ul.show {
+    display: flex; /* show when toggled */
+  }
+
+
+  .menu-toggle {
+    display: block; /* visible on mobile */
+  }
+
 
   .navbar li {
-    width: 100%;                  /* each tab fills width */
+    width: 100%;
   }
 
+
   .navbar a {
-    display: block;               /* makes links behave like buttons */
+    display: block;
     text-align: center;
     padding: 0.75rem;
     border-radius: 5px;
-    background: #253e57;          /* consistent background */
-    transition: background 0.3s ease;
+    background: #253e57;
   }
+
 
   .navbar a:hover {
     background: #1abc9c;
     color: #fff;
   }
 }
+
+
+
+
+
 
 
 
