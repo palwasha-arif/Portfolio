@@ -88,6 +88,33 @@ a:hover {
   padding: 0.5rem 1rem;
   border-radius: 5px;
 }
+/* Mobile Navigation Fix */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;       /* stack vertically */
+    align-items: stretch;         /* full width buttons */
+    gap: 0.5rem;                  /* smaller spacing */
+  }
+
+  .navbar li {
+    width: 100%;                  /* each tab fills width */
+  }
+
+  .navbar a {
+    display: block;               /* makes links behave like buttons */
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 5px;
+    background: #253e57;          /* consistent background */
+    transition: background 0.3s ease;
+  }
+
+  .navbar a:hover {
+    background: #1abc9c;
+    color: #fff;
+  }
+}
+
 
 
 /* Sections */
